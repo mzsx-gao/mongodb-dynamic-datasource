@@ -1,0 +1,11 @@
+{
+  "tenantCode" : "10000",
+  "tenantName" : "测试10000",
+  "tenantStatus" : NumberInt(2),
+  "application" : "mongodb-dynamic",
+  "uri" : "172.19.7.200:27017",
+  "username" : "root",
+  "password" : "root",
+  "authdatabase" : "admin",
+  "database" : "mongodb-dynamic"
+}
