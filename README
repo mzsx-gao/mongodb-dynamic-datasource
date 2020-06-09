@@ -1,5 +1,11 @@
 接入规范:
 1.应用引入该jar包
+<dependency>
+    <groupId>com.gao.mongodb</groupId>
+    <artifactId>mongodb-dynamic-datasource</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
+
 2.配置公共数据源与默认数据源，例如:
 spring:
   data:
@@ -15,5 +21,10 @@ spring:
       username: root
       password: root
       authdatabase: admin
-3.需要使用动态数据源的service,第一个参数必须是TenantVo
+
+3.让应用扫描com.gao.mongodb.dynamicdatasource路径，并且排除MongoDataAutoConfiguration，例如:
+@SpringBootApplication(scanBasePackages = {"com.gao.mongodb.dynamic","com.gao.mongodb.dynamicdatasource"},
+        exclude={MongoDataAutoConfiguration.class})
+
+4.需要使用动态数据源的service,第一个参数必须是TenantVo
   该项目内部会拦截第一个参数是TenantVo的service,动态设置Mongotemplate，拦截的路径双方约定，本项目内部提前配置好拦截路径
