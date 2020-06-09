@@ -8,16 +8,18 @@
 
 2.配置公共数据源与默认数据源，例如:
 spring:
+  application:
+    name: mongodb-dynamic
   data:
     common:
-      uri: 192.168.151.40:27017
+      uri: 172.19.7.200:27017
       database: lenderb-multi-config
       username: root
       password: root
       authdatabase: admin
     default:
-      uri: 192.168.151.40:27017
-      database: lenderb-channel
+      uri: 172.19.7.200:27017
+      database: mongodb-dynamic-default
       username: root
       password: root
       authdatabase: admin
